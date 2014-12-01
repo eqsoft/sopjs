@@ -9,3 +9,5 @@ tmp
 .bowerrc
 .jshintrc
 .travis.yml
+npm-debug.log
+list.txt
