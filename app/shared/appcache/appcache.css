@@ -1,0 +1,11 @@
+/* appcache css stylesheet */
+
+.appcacheSignal {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	z-index: 1;
+	height: 16px;
+	width: 16px;
+}
+

@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>
+HTML 5 Application Cache device storage limits - Jan 2014 : Suburbia</title>
+<meta charset="iso-8859-1">
+<link rel="alternate" type="application/atom+xml" title="RSS" href="http://suburbia.org.uk/rss.php">
+<link href="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/styles.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://suburbia.org.uk/favicon.ico">
+			<meta name="description" content="HTML 5 application cache storage limits for various browsers / devices as of Jan 2014.">
+    
+<meta name="keywords" content="technology, digital technology, drm, new media, web design, web development, web standards, jquery, javascript, mobile, json, photography, graphic design, video, html, flash, director, scottish blog, dundee, php, director, mysql, actionscript, coding, ska">
+<script async="" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/cbgapi.loaded_1"></script><script async="" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/cbgapi.loaded_0"></script><script gapi_processed="true" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/plusone.js" async="" type="text/javascript"></script><script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/widgets.js" id="twitter-wjs"></script><script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/all.js" async="" id="facebook-jssdk"></script><script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/ga.js" async="" type="text/javascript"></script><script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/jquery-1.js"></script>
+<script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/jquery.js"></script>
+<script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/jquery_002.js"></script> 
+<script>
+$(document).ready(function() {
+	$("#results").tablesorter(); 
+	
+    $(function() {
+        $('a.lightbox').lightBox(); // Select all links with lightbox class
+    });
+	
+	$('a').click(function() {
+	  var $a = $(this);
+	  var href = $a.attr('href');
+	 
+	  // see if the link is external
+	  if ( (href.match(/^http/)) && (! href.match(document.domain)) ) {
+	 
+		// if so, register an event
+		var category = 'outgoing'; // set this to whatever you want
+		var ad_event = 'click'; // set this to whatever you want
+		var label = href; // set this to whatever you want
+	 
+		//pageTracker._trackEvent(category, event, href);
+		_gaq.push(['_trackEvent', category, ad_event, href]);
+	  }
+	});
+	
+	/* Click tracking for Ad tracking */
+	$('.sub_ad_block_tracking').click(function(){
+		var ad_ref = $(this).attr('id');
+		var ad_dest = encodeURIComponent($(this).attr('href'));
+		var ad_page = window.location.pathname;
+		var ad_page_title = $('.maincolumn h2').text();
+		_gaq.push(['_trackEvent', 'Adverts', 'Advert was clicked', ad_ref]);
+		//console.log(ad_ref+' - '+ad_dest);
+		
+		$.get("/includes/ad_bot.php?mode=click&ad_ref="+ad_ref+"&ad_dest="+ad_dest+"&ad_page="+ad_page+"&ad_page_title="+ad_page_title);
+	});
+	/* Ad impression tracking */
+	if ($('.sub_ad_block_tracking').length != 0) {
+		var ad_ref = $('.sub_ad_block_tracking').attr('id');
+		var ad_dest = encodeURIComponent($('.sub_ad_block_tracking').attr('href'));
+		var ad_page = window.location.pathname;
+		var ad_page_title = $('.maincolumn h2').text();
+		$.get("/includes/ad_bot.php?mode=impression&ad_ref="+ad_ref+"&ad_dest="+ad_dest+"&ad_page="+ad_page+"&ad_page_title="+ad_page_title);
+	}
+		
+});
+
+function commentPreview() {
+	var commentcontent = $("#commentcontent").val();
+	var commentsource = "<p><strong>Comment Preview:</strong><br />"+commentcontent.split(/\n/).join("<br />")+"</p>";
+	$("#commentpreview").html(commentsource);
+	
+}
+</script><script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-85818-1']);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+<body data-twttr-rendered="true">
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/QjK2hWv6uak.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/QjK2hWv6uak_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '79477260789', // App ID
+      channelUrl : '//suburbia.org.uk/channel.php', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+	<div id="outerheader">
+    	<div id="header">
+        	<h1>Suburbia</h1> 
+        </div>
+        <div id="subheader">
+				<ul id="navigation"> 
+<li><a href="http://suburbia.org.uk/index.html" title="Home">Home</a></li>  
+<li><a href="http://suburbia.org.uk/archive/" title="Archive">Archive</a></li>   
+ <li><a href="http://suburbia.org.uk/page/about-suburbia.html" title="About Suburbia">About</a>
+</li>
+<li><a href="http://suburbia.org.uk/page/projects.html" title="Projects">Projects</a>
+</li>
+<li><a href="http://www.dundeeconcrete.com/" title="My local skate spot" target="_blank">Sk</a></li>
+<li><a href="http://www.wideopenspace.co.uk/" title="View my company website at Wideopenspace.co.uk" target="_blank">Wk</a></li>
+<li><a href="http://twitter.com/rickcurran" title="View my Twitter feed at Twitter.com/rickcurran" target="_blank">Tw</a></li>
+<li><a href="http://richardcurran.com/" title="View my Tumblelog at RichardCurran.com" target="_blank">Tu</a></li>
+<li><a href="http://flickr.com/photos/suburbia_org_uk/" title="View my photos at Flickr.com/photos/suburbia_org_uk/" target="_blank">Fl</a></li>
+<li><a href="http://instagram.com/rickcurran" title="View my photos at Instagram.com/rickcurran" target="_blank">In</a></li>
+<li><a href="http://vimeo.com/rickcurran" title="View my videos at Vimeo.com/rickcurran" target="_blank">Vi</a></li>
+<li><a href="http://facebook.com/rickcurran" title="View my Facebook profile at Facebook.com/rickcurran" target="_blank">Fb</a></li>
+<li><a href="http://stellar.io/rickcurran" title="View my favourites at Stellar.io/rickcurran" target="_blank">St</a></li>
+
+
+</ul>
+
+
+        </div>
+    </div>
+    
+	<div id="content"> 
+        <div class="maincolumn">
+		
+		            <h2>HTML 5 Application Cache device storage limits - Jan 2014</h2>
+<p>A large project I'm working on just now requires some offline 
+capability so I've been doing a lot of research into the various HTML5 
+technologies available. One thing I found is that a lot of the 
+information out there about storage limitations of browsers and devices 
+was often quite old (2 years being quite old in this context!), so I've 
+performed a range of tests to establish more up-to-date information, so 
+as of Jan 2014 this is hopefully accurate!</p>
+<p>Tests were performed using the AppCache test page at <a href="http://www.der-schepp.de/appcache-default-size/" target="_blank">www.der-schepp.de/appcache-default-size/</a> apart from the Firefox results as that test page wouldn't work at the time of testing, Firefox tests were performed using <a href="http://suburbia.org.uk/appcache_limit_tests/test.html">my own test page instead</a>.</p>
+<p>The tests were mostly performed using the online testing tool <a href="http://browserstack.com/" target="_blank">Browserstack</a>, items marked with † indicate results when tested on actual devices or simulators / emulators.</p>
+<p>Notable weird behaviour is on iOS devices where prompts to increase 
+the available storage space to a limit of 50MB appear, however it seems 
+that an actual limit of 16MB or 20MB occurs when running the 
+test.&nbsp;Also note slightly weird behaviour with the IE10 and IE11 
+results on Windows RT.</p>
+<p>Please leave comments if you see any different results than I have posted or if you have any additional results for devices.</p>
+<p>* The AppCache test only tests a maximum of 256MB so ‘unlimited’ 
+means at least 256MB can be stored. Please note that although limits are
+ per each application cache manifest there is likely a maximum amount of
+ storage space available which would limit how many much data overall 
+can be stored, at this time I these limits are unknown but I hope to do 
+some testing in this area in the near future.</p>
+<table id="results" class="tablesorter">
+<thead>
+<tr>
+<th class="header">Browser Version</th>
+<th class="header">OS Platform</th>
+<th class="header">Device</th>
+<th class="header">Default max (0 = unlimited*, -1 = Unsupported)</th>
+<th class="header">Max (with prompts)</th>
+<th class="header">Comments</th></tr></thead>
+<tbody>
+<tr>
+<td>Internet Explorer 6,7,8</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unsupported">-1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 9</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unsupported">-1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 9</td>
+<td>Windows Phone 7.8</td>
+<td>HTC HD7</td>
+<td title="Unsupported">-1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 10</td>
+<td>Win 7</td>
+<td>PC</td>
+<td>10</td>
+<td>52</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 10</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 10 Desktop</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>10</td>
+<td>52</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 10&nbsp;†</td>
+<td>Win 8 RT</td>
+<td>Surface RT V1</td>
+<td>10</td>
+<td>20</td>
+<td>Prompt asking to “exceed the storage limit on your computer”. 
+Interestingly using the ‘der-schepp.de’ test was giving 4MB as the 
+default maximum here but using my own test confirmed 10MB which is what 
+IE10’s default prompt level is set to.&nbsp;See notes for Win 8.1 RT 
+tests.</td></tr>
+<tr>
+<td>Internet Explorer 10 Desktop&nbsp;†</td>
+<td>Win 8 RT</td>
+<td>Surface RT V1</td>
+<td>10</td>
+<td>20</td>
+<td>Prompt asking to “exceed the storage limit on your computer”. 
+Interestingly using the ‘der-schepp.de’ test was giving 2MB as the 
+default maximum here but using my own test confirmed 10MB which is what 
+IE10’s default prompt level is set to.&nbsp;See notes for Win 8.1 RT 
+tests.</td></tr>
+<tr>
+<td>Internet Explorer 11</td>
+<td>Win 7</td>
+<td>PC</td>
+<td>10</td>
+<td>52</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 11</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td>10</td>
+<td>52</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 11 Desktop</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td>52</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Internet Explorer 11&nbsp;†</td>
+<td>Win 8.1 RT</td>
+<td>Surface RT V1</td>
+<td>4</td>
+<td>20</td>
+<td>Prompt asking to “exceed the storage limit on your computer”. 
+Interestingly using the ‘der-schepp.de’ test was giving 4MB as the 
+default maximum here but using my own test 8MB was cached without a 
+prompt appearing, IE 11 on Win RT 8.1 has 10MB set as the default level 
+to prompt to exceed storage limits but trying 9MB or higher triggered 
+the prompt.</td></tr>
+<tr>
+<td>Internet Explorer 11 Desktop&nbsp;†</td>
+<td>Win 8.1 RT</td>
+<td>Surface RT V1</td>
+<td>4</td>
+<td>20</td>
+<td>Prompt asking to “exceed the storage limit on your computer”. 
+Interestingly using the ‘der-schepp.de’ test was giving 4MB as the 
+default maximum here but using my own test 8MB was cached without a 
+prompt appearing, IE 11 on Win RT 8.1 has 10MB set as the default level 
+to prompt to exceed storage limits but trying 9MB or higher triggered 
+the prompt.</td></tr>
+<tr>
+<td>Safari 4.0</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 5.0</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 5.1</td>
+<td>Win 8</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 5.1</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 5.1</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 5.1</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 6.0</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 6.1</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Safari 7.0</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 31</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 31</td>
+<td>Win 7</td>
+<td>PC</td>
+<td>128</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 31</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>75</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 31</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 31</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 32 Beta</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 32 Beta</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 32 Beta</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>56</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 32 Beta</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 32 Beta</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 32 Beta</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 33 Dev</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 33 Dev</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 33 Dev</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>60</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 33 Dev</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 33 Dev</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Chrome 33 Dev</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Mobile Chrome 31 - iPad †</td>
+<td>iOS 7.0</td>
+<td>iPad 3rd Gen</td>
+<td>20</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Mobile Chrome 31 - iPhone †</td>
+<td>iOS 7.0</td>
+<td>iPhone 5</td>
+<td>20</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>Win 8</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26 †</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>Win 8</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 27 Beta</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>No prompt but instead gave a notification that the site was using over 50MB of storage.</td></tr>
+<tr>
+<td>Firefox 26 for Android</td>
+<td>Android 4.1.2</td>
+<td>Nexus S</td>
+<td>20</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>57</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 18 †</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>42</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 19 Next</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>Win XP</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>Win 7</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>Win 8</td>
+<td>PC</td>
+<td>46</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>Win 8.1</td>
+<td>PC</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>OSX 10.6</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>OSX 10.7</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>OSX 10.8</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera 20 Dev</td>
+<td>OSX 10.9</td>
+<td>Mac</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Opera Mobile †</td>
+<td>Various</td>
+<td>Opera Mobile Emulator</td>
+<td title="Unlimited *">0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>BlackBerry Browser †</td>
+<td>BlackBerry 10 (10.2.0.1155)</td>
+<td>BlackBerry 10 Device Simulator</td>
+<td>0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>BlackBerry Playbook Browser †</td>
+<td>BlackBerry Playbook 2.1 (2.1.0.1032)</td>
+<td>BlackBerry PlayBook Device Simulator</td>
+<td>0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 3.2</td>
+<td>iPad 1st Gen</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 4.3.2</td>
+<td>iPad 2nd Gen</td>
+<td>2</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 5.0</td>
+<td>iPad 2nd Gen</td>
+<td>2</td>
+<td>20</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 20MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 5.1</td>
+<td>iPad 3rd Gen</td>
+<td>2</td>
+<td>20</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 20MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 6.0</td>
+<td>iPad 3rd Gen</td>
+<td>10</td>
+<td>16</td>
+<td>Prompt for 25MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 6.0</td>
+<td>iPad Mini 1st Gen</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad</td>
+<td>iOS 7.0</td>
+<td>iPad 3rd Gen</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad †</td>
+<td>iOS 7.0</td>
+<td>iPad 3rd Gen</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPad †</td>
+<td>iOS 7.0</td>
+<td>iPad Mini Retina</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPhone</td>
+<td>iOS 3.0</td>
+<td>iPhone 3GS</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Mobile Safari - iPhone</td>
+<td>iOS 4.0</td>
+<td>iPhone 4</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Mobile Safari - iPhone</td>
+<td>iOS 5.1</td>
+<td>iPhone 4S</td>
+<td>2</td>
+<td>20</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPhone</td>
+<td>iOS 6.0</td>
+<td>iPhone 4S</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPhone</td>
+<td>iOS 6.0</td>
+<td>iPhone 5</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPhone †</td>
+<td>iOS 7.0</td>
+<td>iPhone 5</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Mobile Safari - iPhone</td>
+<td>iOS 7.0</td>
+<td>iPhone 5S</td>
+<td>10</td>
+<td>16</td>
+<td>Prompts for 10MB, 25MB and 50MB appeared but the test only managed to store 16MB max.</td></tr>
+<tr>
+<td>Android Browser †</td>
+<td>Android 4.1.2</td>
+<td>Nexus S</td>
+<td>32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Amazon Silk 3.8 †</td>
+<td>Android 4.0.3</td>
+<td>Kindle Fire</td>
+<td>0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.0.3</td>
+<td>Kindle Fire 2</td>
+<td>48</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Amazon Silk 3.4 †</td>
+<td>Android 4.0.3</td>
+<td>Kindle Fire HD 8.9</td>
+<td>0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.0.3</td>
+<td>Kindle Fire HD 8.9</td>
+<td>48</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.1.2</td>
+<td>Google Nexus 7</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.0.4</td>
+<td>Samsung Galaxy Note 10.1</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.0.4</td>
+<td>Samsung Galaxy Tab 2 10.1</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.2.2</td>
+<td>LG Nexus 4</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 4.1.2</td>
+<td>Samsung Galaxy SIII</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Android Browser</td>
+<td>Android 2.3.3</td>
+<td>Samsung Galaxy Note</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr></tbody></table>
+<p><a target="_blank" title="" href="http://suburbia.org.uk/appcache_limit_tests/html5_application_cache_device_storage_limits-jan_2014.pdf">Download as a PDF</a> - <a target="_blank" title="" href="http://suburbia.org.uk/appcache_limit_tests/html5_application_cache_device_storage_limits-jan_2014.csv">Download as a CSV</a></p>
+<br clear="all">            
+<br><br>            <div id="meta-comments">
+                <div fb-iframe-plugin-query="app_id=79477260789&amp;href=http%3A%2F%2Fsuburbia.org.uk%2Fblog%2F2014%2F01%2F15%2F124659.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=95" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe class="" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/like.htm" style="border: medium none; visibility: visible; width: 78px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f2c7d3762a95978" frameborder="0" height="1000px" width="95px"></iframe></span></div>
+
+<iframe style="width: 109px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/tweet_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/fastbutton.htm" name="I0_1415470935033" id="I0_1415470935033" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'en-GB'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<h3>Meta</h3>
+
+<p>Tags: <strong>html5,application cache,appcache,storage,offline storage,local storage,web dev,</strong></p>
+
+<p>Originally published on <strong>2014-01-15 12:46:59</strong> by <strong>Rick Curran</strong></p>
+
+<p> Last edited on <strong>2014-01-16 17:49:21</strong> by <strong>Rick Curran</strong></p>
+
+<p>Permalink: <a href="http://suburbia.org.uk/blog/2014/01/15/124659.html">http://suburbia.org.uk/blog/2014/01/15/124659.html</a></p>
+
+<div id="sharebox">
+<script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/Suburbia-RickCurransBlog.js" type="text/javascript" charset="utf-8"></script><script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/Suburbia-RickCurransBlog_002.js" type="text/javascript"></script>
+</div> 
+                <h3>Visitor Comments:</h3>
+<p>There are currently no Visitor Comments for this post.</p>
+
+
+
+<h3>Leave a comment...</h3>
+<div id="commentpreview">
+<p><strong>Comment Preview:</strong><br></p>
+</div>
+<form action="/" method="post" name="commentform" id="commentform">
+
+<p>
+<label for="namefield" title="This is the area for your name.">Name:</label><br>
+<input name="namefield" tabindex="1" id="namefield" class="txtbox" title="This is the area for your name." type="text">
+</p>
+
+<p>
+<label for="email" title="This is the area for your email address, this is required for posting but by default is not shown within your post.">Email:</label><br>
+<input name="email" tabindex="2" id="email" class="txtbox" title="This is the area for your email address, this is required for posting but by default is not shown within your post." type="text">
+</p>
+
+<p>
+<label for="content" title="This is the area for typing your comment.">Comment:</label><br>
+<textarea name="content" id="commentcontent" cols="36" rows="6" tabindex="3" class="msgbox" title="This is the area for typing your comment." onkeyup="commentPreview();"></textarea>
+</p>
+
+<p>
+<label for="monkeyface">Is ice hot or cold?:</label> <input name="monkeyface" tabindex="4" id="monkeyface" class="px40" maxlength="4" type="text">
+</p>
+
+<p>
+<input name="emailhide" value="true" tabindex="5" id="emailhide" title="This gives you the option of whether you would like your email address shown in your comment." class="px10" type="checkbox"><label for="emailhide" title="This gives you the option of whether you would like your email address shown in your comment.">Show email address in comment</label> 
+
+</p>
+
+<p>
+<input name="Submit" tabindex="6" onclick="YY_checkform('commentform','namefield','#q','0','You forgot to put your name','email','#S','2','You forgot to put your email address','content','1','1','You forgot to write a comment');return document.MM_returnValue" value="Post comment" type="submit"></p>
+<input name="blogdate" id="blogdate" value="2014-01-15 12:46:59" type="hidden">
+<input name="date" id="date" value="2014-11-08 18:22:16" type="hidden">
+<input name="returnurl" value="http://suburbia.org.uk/blog/2014/01/15/124659.html" type="hidden">
+<input name="MM_insert" value="commentform" type="hidden">
+</form>
+            </div>    
+                            
+        
+		        </div>
+		
+		<div class="rightcolumn">            
+                        
+
+
+<iframe src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/banner.htm" style="overflow-x:hidden;overflow-y:hidden;width:300px;height:250px;border:0px" frameborder="0"></iframe>
+            <h3 class="navulheader">Recent Posts:</h3>
+<ul class="navul bulleted">
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2014/08/28/144032.html">	  iPhone view of 2013</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2014/01/15/124659.html">	  HTML 5 Application Cache device storage limits - Jan 2014</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2013/09/11/161024.html">	  Creative Dundee Mid Week Meets</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2013/06/13/124007.html">	  GoPro Hero 3 - 720p 120fps slowmo After Effects test</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2013/03/14/151453.html">	  R.I.P. BrowserLab</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2013/02/22/171023.html">	  Rolling. (iPhone video experimentation)</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2013/02/07/133545.html">	  Cross-platform, cross-browser website testing with BrowserStack</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2012/10/11/130013.html">	  Remotely debugging mobile devices: Remote web inspection in Safari and iOS6</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2012/09/20/172851.html">	  Tip: Fix for iPhone voicemail stopping working after upgrading to iOS6</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2012/03/13/113040.html">	  Adobe Edge Preview 5</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2012/02/27/121930.html">	  Music / Video formats uncovered articles by Shedworx</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2012/01/18/153804.html">	  Why the next iPhone won't be called 'iPhone 5'...</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2011/12/05/180652.html">	  Preparing audio podcast files using Shedworx Smart Converter</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2011/08/31/130405.html">	  How to install an SSL certificate on Plesk 9.5.4 (without going completely nuts)</a>
+      	  </li>
+ 
+ 
+	  <li class="navli"><a href="http://suburbia.org.uk/blog/2011/08/17/012610.html">	  Rise of the Machines</a>
+      	  </li>
+</ul>
+
+<h3 class="navulheader">Popular Posts:</h3>
+<ul class="navul bulleted">
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2010/02/10/071511.html">	  Tip: Setting up a Minolta PagePro 9100 printer under Snow Leopard</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2010/02/08/102945.html">
+	  Tip: Use a symbolic link to force Mail.app downloads into the main 
+Downloads folder in Mac OSX (Updated for OSX 10.8 Mountain Lion)</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2009/04/08/182507.html">	  Five Subversion Clients for Mac OSX</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2009/03/11/043542.html">	  FlamingoHD - Helping you manage your AVCHD media</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2008/11/07/013337.html">	  Budget AVCHD editing in Windows: VoltaicHD for PC and Windows Movie Maker!</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2008/11/06/224921.html">	  Burn Blu-ray compatible and AVCHD DVDs using RevolverHD for Mac</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2007/11/13/120206.html">	  Configuring Apache 2 with Virtual Hosts on Mac OSX Leopard</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2007/08/21/153945.html">	  One more reason why there is no Flash Player on the iPhone - H.264 support in Flash Player 9</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2007/07/28/175003.html">	  How to edit AVCHD footage on Mac OSX? Final Cut Pro 6.0.1 and Voltaic to the rescue!</a>
+	  </li>
+ 
+<li class="navli"><a href="http://suburbia.org.uk/blog/2007/06/08/002532.html">	  Historical overview of Olympic logos</a>
+	  </li>
+</ul>			<div id="adverts_panel">
+
+<div class="ad_block">
+
+</div>
+</div>		</div>
+            <div class="breakdiv"><br clear="all">
+		</div>
+
+	</div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/postmessageRelay.htm" id="oauth2relay608124311" name="oauth2relay608124311"></iframe> 
+    <div id="footerwrap">
+        <div id="footer">
+            <p>© 2005 - 2014 � � � Rick Curran &nbsp; • &nbsp; There are 209 posts in this Blog &nbsp; • &nbsp;  <img src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/Suburbia-RickCurransBlog.gif" style="vertical-align:bottom;border:0" alt="" height="26" width="88"></p>
+    <script src="HTML%205%20Application%20Cache%20device%20storage%20limits%20-%20Jan%202014%20%20%20Suburbia-Dateien/Suburbia-RickCurransBlog_003.js" type="text/javascript" charset="utf-8"></script>
+    	</div>
+    </div>
+
+
+
+</body></html>
